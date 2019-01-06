@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tripod.quickmath.MainActivity"
+    android:backgroundTint="@android:color/holo_blue_bright"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relative"
+        android:visibility="invisible"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ResultTextView"
+            android:textSize="40sp"
+            android:layout_marginTop="52dp"
+            android:layout_below="@+id/grid"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="0/0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/PointsTextView"
+            android:padding="10dp"
+            android:textSize="30sp"
+            android:background="@android:color/holo_green_light"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/sumTextView"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="10+20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sumTextView"
+            android:padding="15dp"
+            android:textSize="25sp"
+            android:layout_alignBaseline="@+id/PointsTextView"
+            android:layout_alignBottom="@+id/PointsTextView"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:text="30s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/TimerTextView"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:background="@android:color/holo_orange_light" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TimerTextView"
+            android:layout_alignParentStart="true"
+            android:id="@+id/grid"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="0"
+                android:id="@+id/button0"
+                android:textSize="80sp"
+                android:background="@android:color/holo_blue_light"
+                android:onClick="chooseAnswer"
+                android:textAlignment="center" />
+            <Button
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:textAlignment="center"
+                android:gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="1"
+                android:id="@+id/button1"
+                android:textSize="80sp"
+                android:background="@color/colorAccent"
+                android:onClick="chooseAnswer" />
+            <Button
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="2"
+                android:id="@+id/button2"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                android:background="@android:color/holo_green_dark"
+                android:onClick="chooseAnswer" />
+            <Button
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"
+                android:tag="3"
+                android:id="@+id/button3"
+                android:textSize="80sp"
+                android:background="?android:attr/colorPressedHighlight"
+                android:onClick="chooseAnswer" />
+        </GridLayout>
+
+        <Button
+            android:text="Play Again !"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/playButton"
+            android:visibility="invisible"
+            android:onClick="playAgain"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/sumTextView" />
+
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/PercentagetextView"
+            android:textSize="40sp"
+            android:layout_marginBottom="12dp"
+            android:layout_above="@+id/playButton"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <Button
+        android:text="GO!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/startButton"
+        android:textSize="80sp"
+        android:padding="40dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:onClick="start"
+        android:visibility="visible" />
+
+</RelativeLayout>
